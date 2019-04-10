@@ -45,9 +45,10 @@ def main(file1, file2):
         
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
-    args = parser.add_argument("file1")
-    args = parser.add_argument("file2")
+    parser.add_argument("--f1", required=True)
+    parser.add_argument("--f2", required=True)
 
     args=parser.parse_args()
+    print("your input files are: ", args.f1, " and ", args.f2)
 
-    main(args.file1, args.file2)
+    main(args.f1, args.f2)
